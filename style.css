@@ -1,0 +1,88 @@
+body {
+    background-color: #222527;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1 {
+    text-align: center;
+    font-size: 80px;
+    color: #222527;
+}
+
+h3 {
+    text-align: center;
+    font-size: 25px;
+    color: #222527;
+}
+
+h5 {
+    text-align: center;
+    color: #222527;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+}
+
+.list {
+    text-align: center;
+}
+
+.box {
+    width: fill;
+    height: 300px;
+    padding: 10px;
+    margin: 10px auto;
+    background-color: white;
+}
+
+.credits-box {
+    width: fill;
+    height: 270px;
+    padding: 10px;
+    margin: 10px auto;
+    background-color: white;
+}
+
+.search-overlay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 20px auto;
+    text-decoration: none;
+    color: inherit;
+}
+
+.search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 20px auto;
+    text-decoration: none;
+    color: inherit;
+}
+
+.search-box {
+    width: 600px;
+    height: 50px;
+    padding: 10px;
+    font-size: 20px;
+    border: 2px solid #333;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.fade {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease, visibility 0s 0.5s;
+}
+
+.list a {
+    transition: opacity 0.5s ease;
+}
