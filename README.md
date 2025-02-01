@@ -1,6 +1,3 @@
-**Here’s the `README.md` content for your project:
-
-```markdown
 # Games Website
 
 Welcome to the Games Website repository! This project hosts a variety of classic games built with HTML, CSS, and JavaScript.
