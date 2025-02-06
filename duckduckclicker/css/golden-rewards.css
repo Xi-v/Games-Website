@@ -1,0 +1,118 @@
+#golden-rewards {
+    position: absolute;
+
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+
+    pointer-events: none;
+    touch-action: none;
+}
+
+.reward {
+    position: absolute;
+
+    left: -5vw;
+
+    animation: moveToRight;
+    animation-duration: 50s; /* automatically assigned randomly in code */
+    animation-timing-function: ease-in-out;
+
+    width: 5vw;
+
+    pointer-events: initial;
+    touch-action: initial;
+
+    cursor: var(--cursor-pointer);
+
+    z-index: 5;
+}
+
+.reward:active {
+    cursor: var(--cursor-click);
+}
+
+@keyframes moveToRight {
+    0% {
+        left: -5vw;
+    }
+
+    100% {
+        left: 105vw;
+    }
+}
+
+/* floating animation */
+.reward img {
+    animation: float;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0) rotate(0);
+    }
+
+    25% {
+        transform: translateY(0.5vw) rotate(15deg);
+    }
+
+    50% {
+        transform: translateY(1vw);
+    }
+
+    75% {
+        transform: translateY(0.5vw) rotate(-15deg);
+    }
+
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+}
+
+/* collection animation */
+.collected {
+    pointer-events: none;
+    touch-action: none;
+}
+
+.collected div {
+    animation: collect;
+    animation-duration: 0.4s;
+
+    opacity: 0;
+}
+
+@keyframes collect {
+    0% {
+        scale: 1;
+        opacity: 1;
+    }
+
+    20% {
+        scale: 1.1;
+        opacity: 1;
+    }
+
+    100% {
+        scale: 0;
+        opacity: 0;
+    }
+}
+
+
+.reward-text {
+    animation-duration: 1s;
+    
+    font-size: 1.5vw;
+    text-align: center;
+
+    width: 8vw;
+
+    transform: translateY(-1vw);
+
+    overflow: visible;
+}

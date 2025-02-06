@@ -1,0 +1,353 @@
+#main {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+
+    display: flex;
+    justify-content: space-between;
+    gap: 1.25vw;
+
+    padding: 1.25vw;
+}
+
+#left-side {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#left-side button {
+    padding: 0.5vw;
+
+    gap: 0.5vw;
+
+    width: 5.5vw;
+    height: 5.5vw;
+
+    font-size: 1.1vw;
+}
+
+#left-side button img {
+    width: 3.8vw;
+}
+
+#ad-button {
+    width: 11.675vw !important;
+}
+
+#ad-button img {
+    width: 4vw;
+}
+
+#duck-zone {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    flex-grow: 1;
+}
+
+#duck {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    width: 20vw;
+    margin-bottom: auto;
+    margin-top: auto;
+
+    cursor: var(--cursor-pointer);
+}
+
+#duck-img {
+    width: 20vw;
+}
+
+#duck:active{
+    cursor: var(--cursor-click);
+}
+
+#pet-text {
+    position: absolute;
+
+    top: 2.5vw;
+    left: -6.5vw;
+
+    font-size: 2vw;
+
+    transform: rotate(-5deg);
+}
+
+#double-text {
+    position: absolute;
+
+    top: 10vw;
+    right:  -1vw;
+
+    font-size: 2vw;
+
+    transform: rotate(5deg);
+}
+
+.duck-costume {
+    position: absolute;
+
+    top: 0;
+    bottom: 0;
+
+    width: 20%;
+}
+
+.pop-out {
+    animation: collect;
+    animation-duration: 0.7s;
+
+    opacity: 0;
+}
+
+.pop-in {
+    animation: collect;
+    animation-duration: 0.7s;
+    animation-direction: reverse;
+
+    opacity: 1;
+}
+
+#right-side {
+    position: relative;
+    width: 28vw;
+    min-width: 26vw;
+}
+
+.right-side-list {
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    transform: translateX(100vw);
+    opacity: 0;
+    
+    transition: transform 0.5s, opacity 0.5s;
+}
+
+.right-side-list.show {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+#ascend-btn {
+    min-height: 3.5vw;
+    max-height: 3.5vw;
+    
+    font-size: 1.1vw;
+}
+
+.side-back-btn {
+    min-height: 3.5vw !important;
+}
+
+.item-button {
+    font-size: 1.15vw;
+    line-height: 1.7vw;
+    
+    min-height: 8.7vw;
+}
+
+.item-button p {
+    text-align: left;
+    margin-bottom: 0.375vw;
+}
+
+.item-title {
+    font-size: 1.25vw !important;
+}
+
+.item-button div {
+    position: relative;
+    gap: 0;
+}
+
+.item-button .side {
+    width: 4.5vw;
+}
+
+.upgrade-counter {
+    position: absolute !important;
+    top: -0.3vw;
+    right: -0.4vw;
+
+    text-align: right !important;
+    font-size: 1.1vw;
+}
+
+/* animation */
+/* show */
+#right-side {
+    transition: opacity 0.9s, transform 0.9s;
+    transition-timing-function: ease-out;
+}
+
+#duck {
+    transition: opacity 0.6s, transform 0.6s;
+    transition-timing-function: ease-out;
+}
+
+#left-side {
+    transition: opacity 0.7s, transform 0.7s;
+    transition-timing-function: ease-out;
+}
+
+#stats {
+    transition: opacity 0.6s, transform 0.6s;
+    transition-timing-function: ease-out;
+}
+
+/* hide */
+.hide #left-side {
+    transition: opacity 0.2s, transform 0.2s;
+    transition-timing-function: ease-in;
+
+    opacity: 0;
+    transform: translateX(-40vw);
+}
+
+.hide #duck {
+    transition: opacity 0.4s, transform 0.4s;
+    transition-timing-function: ease-out;
+
+    opacity: 0;
+    transform: translateY(5vw);
+}
+
+.hide #right-side {
+    transition: opacity 0.3s, transform 0.3s;
+    transition-timing-function: ease-in;
+
+    opacity: 0;
+    transform: translateX(50vw);
+}
+
+.hide #stats {
+    transition: opacity 0.15s, transform 0.15s;
+    transition-timing-function: ease-in;
+
+    opacity: 0;
+    transform: translateY(-20vw);
+}
+
+/* bounce duck */
+.bounce-duck-animation {
+    animation: bounceDuck;
+    animation-duration: 0.2s;
+    animation-timing-function: ease-out;
+}
+
+@keyframes bounceDuck {
+    0% {
+        scale: 0.95 1.1;
+    }
+
+    20% {
+        scale: 0.9 1.2;
+    }
+
+    80% {
+        scale: 1.1 0.9;
+    }
+
+    100% {
+        scale: 1;
+    }
+}
+
+.bounce-stat-animation {
+    animation: bounceStat;
+    animation-duration: 0.2s;
+    animation-timing-function: ease-out;
+}
+
+@keyframes bounceStat {
+    0% {
+        transform: scale(1.05);
+    }
+
+    20% {
+        transform: scale(1.15);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* stats */
+#stats {
+    display: flex;
+    flex-direction: column;
+    gap: 0.675vw;
+
+    pointer-events: none;
+    touch-action: none;
+
+    z-index: 2;
+}
+
+.stat {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.25vw;
+
+    word-spacing: 0.5vw;
+    word-break: break-all;
+}
+
+#ducket-stat img {
+    width: 4vw;
+}
+
+#ducket-stat p{
+    font-size: 2vw;
+}
+
+#power-stat img {
+    width: 2vw;
+}
+
+#power-stat p{
+    font-size: 1.75vw;
+}
+
+#auto-stat img {
+    width: 2.2vw;
+}
+
+#auto-stat p{
+    font-size: 1.5vw;
+}
+
+#multiplier-stat {
+    text-align: center;
+    font-size: 1.25vw;
+}
+
+
+#credits {
+    display: flex;
+    flex-direction: column;
+    gap: 1vw;
+
+    font-size: 1.25vw;
+    word-spacing: 0.6vw;
+
+    padding: 1.25vw;
+}

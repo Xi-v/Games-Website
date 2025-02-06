@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Title</title>
+<link rel="manifest" href="/manifest.json">
+<style>
+  section {
+    width: 100vw; /* Set section width to full viewport width */
+    height: 100vh; /* Set section height to full viewport height */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+  }
+  iframe {
+    width: 100%; /* Set iframe width to 100% of its container (section) */
+    height: 100%; /* Set iframe height to 100% of its container (section) */
+    border: 0; /* Remove iframe border */
+  }
+</style>
+</head>
+<body>
+
+<section>
+  <iframe allowfullscreen="true" src="new.html" frameborder="0"></iframe>
+</section>
+
+</body>
+</html>
+
+ <!-- CD START (required) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sliding Image</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden; 
+  }
+  #image {
+    position: fixed;
+    top: 0;
+    right: -300px; 
+    transition: right 1s ease;
+    z-index: 999; 
+    width: 150px; /* Adjust width as needed */
+    height: auto; /* Maintain aspect ratio */
+  }
+</style>
+</head>
+<body>
+
+</body>
+</html>

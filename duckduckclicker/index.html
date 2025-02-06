@@ -1,0 +1,232 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1, user-scalable=0">
+    <title>DUCK DUCK CLICKER</title>
+    <link rel="icon" href="icon.svg">
+    
+    <!-- Resources -->
+    <link rel="stylesheet" href="css/game.css">
+
+    <!-- External Libraries -->
+    <script src="js/lib/bignumber.min.js"></script>
+    <script src="js/lib/howler.min.js"></script>
+    
+    <!-- Scripts-->
+    <script src="js/data.js" defer></script>
+    <script src="js/index.js" defer></script>
+    <script src="js/game.js" defer></script>
+
+</head>
+<body style="visibility: none;">
+    
+    <!-- Loading Screen -->
+    <div id="loader" style="visibility: visible;">
+        <img src="img/loader.png">
+        <div id="loader-bar">
+            <div id="loader-progress"></div>
+        </div>
+    </div>
+
+    <!-- Game-->
+    <div id="game">
+        <!-- Main Screen -->
+        <div id="main" class="hide">
+            <div id="left-side">
+                <div class="flex-col">
+                    <button id="settings-btn">
+                        <img src="img/UI/btn-settings.svg">
+                    </button>
+                    <button id="achievements-btn" class="flex-col" style="height: 6.5vw;">
+                        <img src="img/UI/btn-achievements.svg">
+                        <p class="stroke" id="achievements-count">7/10</p>
+                    </button>
+                </div>
+                <div class="flex-col">
+                    <button id="ad-button" style="display: none;">
+                        <img src="img/UI/btn-watch.svg">
+                        <p class="stroke">GET X2</p>
+                    </button>
+                    <div class="flex-row">
+                        <button id="hats-btn">
+                            <img src="img/UI/btn-cap.svg">
+                        </button>
+                        <button id="frames-btn">
+                            <img src="img/UI/btn-frame.svg" >
+                        </button>
+                    </div>
+                    <div class="flex-row">
+                        <button id="glasses-btn">
+                            <img src="img/UI/btn-glasses.svg">
+                        </button>
+                        <button id="necklaces-btn">
+                            <img src="img/UI/btn-necklace.svg">
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div id="duck-zone">
+                <div id="stats">
+                    <div class="stat" id="ducket-stat">
+                        <img src="img/UI/ducket-stats.svg"> <p class="stroke">142,532,234 DUCKETS </p>
+                    </div>
+
+                    <div class="stat" id="power-stat">
+                        <img src="img/UI/cursor-default.svg"> <p class="stroke">532,234 DUCK POWER </p>
+                    </div>
+
+                    <div class="stat" id="auto-stat">
+                        <img src="img/UI/cursor-pointer.svg"> <p class="stroke">124,532 AUTODUCKER</p>
+                    </div>
+                </div>
+                <div id="duck">
+                    <p class="stroke" id="pet-text">PET THE DUCK --></p>
+                    <p class="stroke pop-out" id="double-text">X2</p>
+                    <img id="duck-img" src="img/duck.svg">
+                    <img id="duck-glasses" class="duck-costume">
+                    <img id="duck-hat" class="duck-costume">
+                    <img id="duck-necklace" class="duck-costume">
+                    <img id="duck-frame" class="duck-costume">
+                </div>
+
+            </div>
+            <div id="right-side">
+                <div id="upgrades" class="panel flex-col show right-side-list">
+                    <div id="shop-list" class="grow scroll flex-col"></div>
+                    <p id="multiplier-stat" class="stroke">Multiplier: X34.04</p>
+                    <button id="ascend-btn"><p class="stroke">ASCEND: X2.5</p></button>
+                </div>
+
+                <div id="hats" class="panel flex-col right-side-list">
+                    <div id="hats-list" class="grow scroll flex-col"></div>
+                    <div class="flex-row flex-center">
+                        <p class="stroke">AUTOSELECT NEW ITEM</p>
+                        <div class="grow"></div>
+                        <input type="checkbox" id="autoselect-hats-btn">
+                    </div>
+                    <button class="side-back-btn"><p class="stroke">BACK</p></button>
+                </div>
+
+                <div id="glasses" class="panel flex-col right-side-list">
+                    <div id="glasses-list" class="grow scroll flex-col"></div>
+                    <div class="flex-row flex-center">
+                        <p class="stroke">AUTOSELECT NEW ITEM</p>
+                        <div class="grow"></div>
+                        <input type="checkbox"  id="autoselect-glasses-btn">
+                    </div>
+                    <button class="side-back-btn"><p class="stroke">BACK</p></button>
+                </div>
+
+                <div id="necklaces" class="panel flex-col right-side-list">
+                    <div id="necklaces-list" class="grow scroll flex-col"></div>
+                    <div class="flex-row  flex-center">
+                        <p class="stroke">AUTOSELECT NEW ITEM</p>
+                        <div class="grow"></div>
+                        <input type="checkbox"  id="autoselect-necklaces-btn">
+                    </div>
+                    <button class="side-back-btn"><p class="stroke">BACK</p></button>
+                </div>
+
+                <div id="frames" class="panel flex-col right-side-list">
+                    <div id="frames-list" class="grow scroll flex-col"></div>
+                    <div class="flex-row flex-center">
+                        <p class="stroke">AUTOSELECT NEW ITEM</p>
+                        <div class="grow"></div>
+                        <input type="checkbox"  id="autoselect-frames-btn">
+                    </div>
+                    <button class="side-back-btn"><p class="stroke">BACK</p></button>
+                </div>
+
+                <div id="achievements" class="panel flex-col right-side-list">
+                    <div id="achievements-list" class="grow scroll flex-col"></div>
+                    <button class="side-back-btn"><p class="stroke">BACK</p></button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Secondary Screen-->
+        <div id="secondary" class="hide">
+            <div id="settings-menu" class="panel">
+                <p class="stroke title">SETTINGS</p>
+                <div class="flex-row">
+                    <p class="stroke">VOLUME: </p>
+                    <input type="range" min="0" max="1" step="0.01" id="volume-input" class="grow">
+                </div>
+
+                <div id="fullscreen-option" class="flex-row" style="display: none;">
+                    <p class="stroke">FULLSCREEN: </p>
+                    <div class="grow"></div>
+                    <input id="fullscreen-btn" type="checkbox">
+                </div>
+                
+                <button id="settings-background-btn">
+                    <p class="stroke">CHANGE BACKGROUND</p>
+                </button>
+
+                <button id="settings-back-btn">
+                    <p class="stroke">BACK TO GAME</p>
+                </button>
+            </div>
+            <div id="ascension-menu" class="panel">
+                <p class="stroke title">ASCENSION</p>
+                <p class="stroke">
+                    WOULD YOU LIKE TO START OVER BUT PROGRESS FASTER? YOU WILL LOSE ALL YOUR MONEY AND UPGRADES.
+                </p>
+
+                <p class="stroke">
+                    YOU WILL KEEP ALL YOUR ACHIEVEMENTS AND COSTUMES.
+                </p>
+                
+                <div class="flex-row">
+                    <button id="ascension-back-btn">
+                        <p class="stroke">MAYBE LATER</p>
+                    </button>
+
+                    <div class="grow"></div>
+
+                    <button id="ascension-confirm-btn">
+                        <p class="stroke">ASCEND NOW</p>
+                    </button>
+                </div>
+            </div>
+
+            <div id="ad-menu" class="panel">
+                <p class="stroke title">AD BREAK</p>
+                <p class="stroke">
+                    WOULD YOU LIKE TO WATCH AN AD TO GET DOUBLE PROGRESSION FOR 2 MINUTES?
+                </p>
+                
+                <div></div>
+                
+                <div class="flex-row">
+                    <button id="ad-back-btn">
+                        <p class="stroke">MAYBE LATER</p>
+                    </button>
+
+                    <div class="grow"></div>
+
+
+                    <button id="ad-confirm-btn">
+                        <p class="stroke">WATCH NOW</p>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Golden duckets -->
+        <div id="golden-rewards">
+
+        </div>
+
+        <!-- Notification -->
+        <div id="notifications">
+            <button class="item-button" id="notification">
+                <img src="img/shop/1.svg" class="side">
+                <div class="grow flex-col">
+                    <p class="stroke">YOU HAVE UNLOCKED A COOL ITEM</p>
+                </div>
+            </button>
+        </div> 
+    </div>
+</body>
+</html>

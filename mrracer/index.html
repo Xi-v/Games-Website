@@ -1,0 +1,95 @@
+<script>
+  if (window.self === window.top) {
+      // Not in an iframe
+      window.location.href = "/index.html";
+  }
+</script>
+
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>MR RACER</title>
+  <meta name="viewport" content="width=device-width">
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+    #unity-loading-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(31, 31, 31, 0.9);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+    }
+    .spinner {
+      border: 8px solid rgba(255, 255, 255, 0.3); /* Light gray border */
+      border-top: 8px solid white; /* White top */
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      animation: spin 0.7s linear infinite;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+  <div id="unity-container" class="container unity-desktop webgl-content">
+    <canvas id="unity-canvas" class="canvas"></canvas>
+    <div id="unity-loading-bar">
+      <div class="spinner"></div>
+    </div>
+  </div>
+  <script>
+    var buildUrl = "Build";
+    var loaderUrl = buildUrl + "/Y8_ImprovementsTest_V1.loader.js";
+    var config = {
+      dataUrl: buildUrl + "/a910650d55190f2fb8a64370a34ca5e9.data.gz",
+      frameworkUrl: buildUrl + "/fc2d323b3f75955821589a5637701863.js.gz",
+      codeUrl: buildUrl + "/a2b31034b52822b9a793de900962a9f2.wasm.gz",
+      streamingAssetsUrl: "StreamingAssets",
+      companyName: "ChennaiGames",
+      productName: "MR RACER",
+      productVersion: "1.5.6.2",
+    };
+
+    var container = document.querySelector("#unity-container");
+    var canvas = document.querySelector("#unity-canvas");
+    var loadingBar = document.querySelector("#unity-loading-bar");
+
+    if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+      container.className = "unity-mobile";
+      config.devicePixelRatio = 1;
+    } else {
+      canvas.style.width = "100vw";
+      canvas.style.height = "100vh";
+    }
+
+    var script = document.createElement("script");
+    script.src = loaderUrl;
+    script.onload = () => {
+      createUnityInstance(canvas, config).then((unityInstance) => {
+        loadingBar.style.display = "none"; // Hide loader when Unity is ready
+        window.unityInstance = unityInstance;
+      }).catch((message) => {
+        alert(message);
+      });
+    };
+    document.body.appendChild(script);
+  </script>
+</body>
+</html>

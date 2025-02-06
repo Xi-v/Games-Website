@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html class="sl-theme-dark" lang="en">
+  <head>
+    <!-- initialize theme vars
+    https://coolors.co/10002b-240046-3c096c-5a189a-7b2cbf-9d4edd-c77dff-e0aaff -->
+
+    <!-- initialize externals -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js" type="c887b2d382212d4ccd1555bb-text/javascript"></script>
+    <script src=" https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js " type="c887b2d382212d4ccd1555bb-text/javascript"></script>
+    
+
+
+
+
+    <!-- initialize my stuff -->
+    <script src="/js/all.min.js" type="c887b2d382212d4ccd1555bb-text/javascript"></script>
+    <script src="/js/main.js" type="c887b2d382212d4ccd1555bb-text/javascript"></script>
+		<script src="/js/widget.js" type="c887b2d382212d4ccd1555bb-text/javascript"></script>
+<script src="/js/themes.js" type="c887b2d382212d4ccd1555bb-text/javascript"></script>
+    
+    <link rel="stylesheet" href="/style.css" />
+
+
+
+    
+
+    <!-- seo + other things -->
+    <title>Selenite</title>
+    <link rel="icon" href="/favicon.ico" />
+
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+    <!-- toastify -->
+    <script type="c887b2d382212d4ccd1555bb-text/javascript">
+      document.addEventListener("DOMContentLoaded", () => {
+        
+      })
+      $.getJSON("/data/games.json", (data) => {
+        for(let i = 0;i < data.length;i++) {
+          if(location.pathname.includes(data[i]["directory"])) {
+            location.href = "/semag/" + data[i]["directory"] + "/index.html"
+          }
+        }
+      })
+    </script>
+  </head>
+  <alerts>
+
+  </alerts>
+  <body id="noscroll">
+    	<header>
+			<a href="/index.html">Home</a>
+			<a href="/bookmarklets.html">Bookmarklets</a>
+			<a href="/projects.html">Games</a>
+			<a href="/apps.html">Apps</a>
+			<a href="/settings.html">Settings</a>
+			<a id="blank" href="#">Open Blank</a>
+      <a href="/u/" class="usericon"><img src="/img/user.svg"></a>
+
+		</header>
+    <main id="main" class="noscroll">
+      <h1>Page not found!</h1>
+      <p>We could not find this page.</p>
+      <p>Trying to access a page such as login, register, or a user page? Those are only available on official links.</p>
+      <p><a href="https://discord.gg/7jyufnwJNf">Join the Discord to find official links.</a></p>
+      <a href="/index.html"><button>Go home</button></a>
+      <button onclick="if (!window.__cfRLUnblockHandlers) return false; statsForNerds()" data-cf-modified-c887b2d382212d4ccd1555bb-="">Stats for nerds</button>
+          <div id="sfn" style="display: none;" class="message">
+      Please report this to our <a href="https://discord.gg/7jyufnwJNf">Discord</a> or <a href="/cdn-cgi/l/email-protection#097a7c7979667b7d497a6c656c67607d6c276a6a">email.</a> <br> 
+      Requested URL: <span id="full">You need Javascript to show the Stats for nerds</span><br>
+      Referrer: <span id="ref">You need Javascript to show the Stats for nerds</span><br>
+      Title: <span id="title">You need Javascript to show the Stats for nerds</span><br>
+      Screen height: <span id="height">You need Javascript to show the Stats for nerds</span><br>
+      Screen width: <span id="width">You need Javascript to show the Stats for nerds</span><br>
+      Window height: <span id="winheight">You need Javascript to show the Stats for nerds</span><br>
+      Window width: <span id="winwidth">You need Javascript to show the Stats for nerds</span><br>
+      Cookies: <span id="cookie">You need Javascript to show the Stats for nerds</span><br>
+      User agent: <span id="ua">You need Javascript to show the Stats for nerds</span><br>
+      OS platform: <span id="plat">You need Javascript to show the Stats for nerds</span><br>
+      Online: <span id="online">You need Javascript to show the Stats for nerds</span>
+      <br />IP: <span id="ip">You need Javascript to show the Stats for nerds</span><br>
+      Error code: 404<br>
+    </div>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="c887b2d382212d4ccd1555bb-text/javascript">
+"innerText"in document.body||Object.defineProperty(HTMLElement.prototype,"innerText",{get:function(){return this.textContent},set:function(a){this.textContent=a}}),window.fetch||(window.fetch=function(a){return new Promise(function(b,c){var d=new XMLHttpRequest;d.open("GET",a),d.onload=function(){200===d.status?b(JSON.parse(d.responseText)):c(Error(d.statusText))},d.onerror=function(){c(Error("Network Error"))},d.send()})}),window.XMLHttpRequest||(window.XMLHttpRequest=function(){try{return new ActiveXObject("Msxml2.XMLHTTP.6.0")}catch(a){}try{return new ActiveXObject("Msxml2.XMLHTTP.3.0")}catch(a){}try{return new ActiveXObject("Msxml2.XMLHTTP")}catch(a){}throw new Error("This browser does not support XMLHttpRequest.")});function statsForNerds(){var a=document.getElementById("sfn");"none"===a.style.display?(a.style.display="block",console.log("[\u2139\uFE0F] Showing the stats for nerds!")):(a.style.display="none",console.log("[\u2139\uFE0F] Hiding the stats for nerds!"))}document.getElementById("full").innerText=window.location.href,document.getElementById("ref").innerHTML=document.referrer,document.getElementById("title").innerText=document.title,document.getElementById("height").innerHTML=screen.height+"px",document.getElementById("width").innerHTML=screen.width+"px",document.getElementById("winheight").innerHTML=window.innerHeight+"px",document.getElementById("winwidth").innerHTML=window.innerWidth+"px",document.getElementById("cookie").innerText=navigator.cookieEnabled,document.getElementById("ua").innerHTML=navigator.userAgent,document.getElementById("plat").innerHTML=navigator.platform,document.getElementById("online").innerHTML=navigator.onLine;var echolog={};fetch("//wtfismyip.com/json").then(function(a){return a.json()}).then(function(a){var b={ipAddress:a.YourFuckingIPAddress,hostname:a.YourFuckingHostname},c=document.getElementById("ip");c.innerText=b.ipAddress})["catch"](function(a){return console.error(a)});
+    </script>
+
+    </main>
+    
+    <footer class="noscroll">
+      <a href="https://gitlab.com/skysthelimit.dev/selenite">Source</a>
+      <a href="https://discord.gg/7jyufnwJNf">Discord</a>
+      <a href="/suggest.html">Suggestions & Bugs</a>
+      <a href="/contact.html">Contact</a>
+      <a href="/support.html">Donate</a>
+      <a href="/about.html">About</a>
+    </footer>
+    
+  <script src="/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="c887b2d382212d4ccd1555bb-|49" defer></script></body>
+</html>

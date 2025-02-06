@@ -1,0 +1,134 @@
+<script>
+    if (window.self === window.top) {
+        // Not in an iframe
+        window.location.href = "/index.html";
+    }
+  </script>
+
+<!DOCTYPE html>
+<html>
+
+<head>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src=""></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
+    
+            gtag('config', '');
+        </script>
+        <meta charset="utf-8">
+        <meta name="application-name" content="Free Rider Jumps" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+
+    <!-- Icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="apple-touch-icon.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="apple-touch-icon-precomposed.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="60x60" href="apple-touch-icon-60x60.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="apple-touch-icon-76x76.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="apple-touch-icon-152x152.png" />
+    <link rel="icon" type="image/png" href="favicon-196x196.png" sizes="196x196" />
+    <link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
+    <link rel="icon" type="image/png" href="favicon-128.png" sizes="128x128" />
+    <meta name="msapplication-TileColor" content="#FFFFFF" />
+    <meta name="msapplication-TileImage" content="mstile-144x144.png" />
+    <meta name="msapplication-square70x70logo" content="mstile-70x70.png" />
+    <meta name="msapplication-square150x150logo" content="mstile-150x150.png" />
+    <meta name="msapplication-wide310x150logo" content="mstile-310x150.png" />
+    <meta name="msapplication-square310x310logo" content="mstile-310x310.png" />
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+    <!-- Web Manifest-->
+    <link rel="manifest" href="site.webmanifest">
+    <meta name="msapplication-TileColor" content="#000000">
+    <meta name="theme-color" content="#000000">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Free Rider Jumps | Playtropolis.com</title>
+    <link rel="canonical" href="https://playtropolis.com/Free-rider-jumps">
+    <meta name="google-site-verification" content="4YGyr5Kqv1eOl313G2BJcJAj0Uc2bD9EvrpGe5GnUAU" />
+    <link rel="chrome-webstore-item" href="">
+
+    <script defer src="firebase/5.4.2/firebase-app.js"></script>
+    <script defer src="firebase/init.js"></script>
+    <script>
+        var _rollbarConfig = {
+            accessToken: "30016704087d41318cb2ede474911b2f",
+            captureUncaught: true,
+            captureUnhandledRejections: true,
+            payload: {
+                environment: "production"
+            }
+        };
+    </script>
+
+    <!-- <script type="text/javascript" src="scripts/rollbar.js" charset="utf-8"></script> -->
+    <script type="text/javascript" src="//imasdk.googleapis.com/js/sdkloader/ima3.js"></script>
+    <script>
+        //Add this below content to your HTML page, or add the js file to your page at the very top to register service worker
+        if (navigator.serviceWorker.controller) {
+            console.log('[Free Rider Jumps] active service worker found, no need to register')
+        } else {
+            //Register the ServiceWorker
+            navigator.serviceWorker.register('free-rider-sw.js?version=' + encodeURIComponent('1.0.53'), {
+                scope: './'
+            }).then(function (reg) {
+                console.log('Service worker has been registered for scope:' + reg.scope);
+            });
+        }
+    </script>
+    <link rel="stylesheet" type="text/css" href="styles/styles.css" />
+</head>
+
+<body>
+
+    <div class="game-container" id="game-container">
+
+        <div class="centered-container">
+            <div class="freerider-canvas-container" id="freerider-canvas-container" style="visibility: hidden"></div>
+        </div>
+
+        <div class="centered-container">
+            <div class="phaser-canvas-container" id="phaser-canvas-container"></div>
+        </div>
+
+        <div id="ads-container" class="ads-container centered-container" style="display:none">
+            <video id="ads-player">
+            </video>
+            <div id="ads-sdk-container" class="ads-container centered-container"></div>
+        </div>
+    </div>
+
+    <!--div class="footer">
+        <a class="footer-messenger-badge" href="" target="_blank">
+            <img src="assets/badges/messenger_badge@2x.png" width="135" height="40" />
+        </a>
+        <a class="footer-chrome-badge" id="add-to-chrome-button" href=""
+            target="_blank">
+            <img src="assets/badges/chrome_badge@2x.png" width="135" height="40" />
+        </a>
+        <a class="footer-apple-badge" href="" target="_blank">
+            <img src="assets/badges/app_store_badge@2x.png" width="135" height="40" />
+        </a>
+        <a class="footer-google-badge" href=""
+            target="_blank">
+            <img src="assets/badges/google_play_badge@2x.png" width="135" height="40" />
+        </a>
+    </div-->
+
+    <script type="text/javascript" src="scripts/main.bundle.js" charset="utf-8"></script>
+    <script>
+        if (chrome.app.isInstalled) {
+            document.getElementById('add-to-chrome-button').style.display = 'none';
+        }
+    </script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"rayId":"905c793aaadd17d8","version":"2025.1.0","r":1,"token":"f32b117169f04cb0b6df465d556ac0f6","serverTiming":{"name":{"cfExtPri":true,"cfL4":true,"cfSpeedBrain":true,"cfCacheStatus":true}}}' crossorigin="anonymous"></script>
+</body>
+
+</html>

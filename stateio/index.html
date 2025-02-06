@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>state.io</title>
+		<meta charset="utf-8" />
+		<meta name="description" content="" />
+		<meta name="format-detection" content="telephone-no" />
+		<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no,width=device-width,height=device-height" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="format-detection" content="telephone=no" />
+        <script src="/js/all.min.js" type="e724879b13aa4ac95bd30bbd-text/javascript"></script>
+		<script src="yt.js" nonce="osL-eWfzBhW-72RE66PbVg" type="e724879b13aa4ac95bd30bbd-text/javascript"></script>
+		<style>
+			body,
+			html {
+				margin: 0;
+				height: 100%;
+				overflow: hidden;
+				background: black;
+			}
+
+			#game-root {
+				position: absolute;
+			}
+
+			#game-canvas,
+			#game-root {
+				width: 100%;
+				height: 100%;
+			}
+		</style>
+		<script nonce="osL-eWfzBhW-72RE66PbVg" type="e724879b13aa4ac95bd30bbd-text/javascript">
+			(function (b) {
+				console.info("SDK", ytgame.SDK_VERSION);
+				var _loaded = 0;
+				Object.defineProperty(b, "loaded", {
+					set: function (v) {
+						_loaded = v;
+					},
+					get: function () {
+						return _loaded;
+					},
+				});
+				b.onLoaded = function (params) {
+					b.ready = true;
+					while (b.cbc.length) {
+						var cb = b.cbc.pop();
+						cb && cb(params);
+					}
+				};
+				ytgame.game.firstFrameReady();
+				b.params = b.params || {};
+				b.params.ytgame = ytgame;
+				b.onLoaded(ytgame);
+			})((window.__diffbus = { ready: false, cbc: [], params: undefined }));
+		</script>
+		<script defer="defer" src="main.js" nonce="osL-eWfzBhW-72RE66PbVg" type="e724879b13aa4ac95bd30bbd-text/javascript"></script>
+		<link href="main.css" rel="stylesheet" nonce="osL-eWfzBhW-72RE66PbVg" />
+	</head>
+	<body>
+		<div id="game-root"><canvas id="game-canvas"></canvas></div>
+	<script src="/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="e724879b13aa4ac95bd30bbd-|49" defer></script><script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"rayId":"8c04428c495a1688","version":"2024.8.0","r":1,"token":"28c7cb7185af4990bda79d5ff73811c5","serverTiming":{"name":{"cfExtPri":true,"cfL4":true}}}' crossorigin="anonymous"></script>
+</body>
+</html>

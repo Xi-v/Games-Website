@@ -1,0 +1,479 @@
+/* css files */
+@import url(main.css);
+@import url(golden-rewards.css);
+@import url(secondary.css);
+
+/*  
+Motley Forces Font - NISKALA HURUF 
+(https://www.fontspace.com/motley-forces-font-f87817)
+*/
+
+@font-face {
+    font-family: "MotleyForces";
+    src: url("../fnt/MotleyForces.ttf");
+}
+
+img {
+    pointer-events: none;
+    touch-action: none;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+    -webkit-tap-highlight-color: transparent;
+    
+    /* variables */
+    --color-white: #E6E6E6;
+    --color-grey1: #d6d6d6;
+    --color-grey2: #c4c4c4;
+    --color-grey3: #b4b4b4;
+    --color-black: black;
+    --color-orange: #f7931e;
+    
+    /* vw is used as the main unit to maintain a constant sizing and look on different resolutions */
+    --border-thickness: 0.4vw;
+    --border-radius: 0.5vw;
+    
+    --text-stroke: 0.6vw;
+    
+    --cursor-arrow: url("../img/UI/cursor-default.svg") 4 0, default;
+    --cursor-pointer: url("../img/UI/cursor-pointer.svg") 9 0, pointer;
+    --cursor-click: url("../img/UI/cursor-click.svg") 9 0, pointer;
+    --cursor-drag: url("../img/UI/cursor-drag.svg") 9 0, grab;
+    --cursor-dragging: url("../img/UI/cursor-dragging.svg") 9 -10, grabbing;
+
+}
+
+body {
+    overflow: hidden;
+    
+    font-family: "MotleyForces", sans-serif;
+    font-size: 1vw;
+    color: var(--color-white);
+    
+    background-color: #F7931E;
+
+    user-select: none;
+
+    /* set the cursor */
+    cursor: var(--cursor-arrow);
+}
+
+/* button */
+button {
+    display: flex;
+    align-items: center;
+    gap: 1.25vw;
+
+    font-family: "MotleyForces", sans-serif;
+    font-size: 1.5vw;
+    color: var(--color-white);
+
+    /*background-color: var(--color-white);*/
+    background: linear-gradient(to top, var(--color-grey2) 0.3vw, var(--color-white) 0.3vw, var(--color-white));
+    
+    border: var(--border-thickness) solid var(--color-black);
+    border-radius: var(--border-radius);
+
+    padding: 0.675vw 1.25vw;;
+    
+    height: 4.5vw;
+
+    cursor: var(--cursor-pointer);
+}
+
+
+button p {
+    width: 100%;
+    text-align: center;
+}
+
+button:hover {
+    background: linear-gradient(to top, var(--color-grey3) 0.3vw, var(--color-grey1) 0.3vw, var(--color-grey1));
+}
+
+button:disabled {
+    background: linear-gradient(to top, var(--color-grey3) 0.3vw, var(--color-grey2) 0.3vw, var(--color-grey2));
+
+    pointer-events: none;
+    touch-action: none;
+}
+
+button:active {
+    background: var(--color-grey2);
+    cursor: var(--cursor-click);
+
+    padding-top: 0.9vw !important;
+}
+
+/* sliders */
+input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    background: var(--color-grey2);
+
+    border: var(--border-thickness) solid var(--color-black);
+    border-radius: 2vw;
+
+    cursor: var(--cursor-drag);
+    
+    max-height: 2vw;
+
+    overflow: hidden;
+}
+
+input[type="range"]:active {
+    cursor: var(--cursor-dragging);
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+    background: none;
+    height: 100%;
+    width: 100%;
+}
+
+input[type="range"]::-moz-range-track {
+    background: none;
+    height: 100%;
+    width: 100%;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    
+    position: relative;
+
+    background-color: var(--color-white);
+
+    border-right: var(--border-thickness) solid var(--color-black);
+
+    width: 0.1vw;
+    height: 2vw;
+
+    box-shadow: -20vw 0 0 19.9vw var(--color-white);
+
+    translate: 0.5vw;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    
+    position: relative;
+
+    background-color: var(--color-white);
+
+    border-right: var(--border-thickness) solid var(--color-black);
+
+    width: 0.1vw;
+    height: 2vw;
+
+    box-shadow: -20vw 0 0 19.9vw var(--color-white);
+
+    translate: 0.5vw;
+}
+
+input[type="range"]::-moz-range-thumb {
+    position: relative;
+    
+    background-color: var(--color-white);
+    
+    border: none;
+    border-right: var(--border-thickness) solid var(--color-black);
+    border-radius: 0;
+
+    width: 0.1vw;
+    height: 2vw;
+
+    box-shadow: -20vw 0 0 19.9vw var(--color-white);
+
+    translate: 0.5vw;
+}
+
+input[type="checkbox"] {
+    appearance: none;
+
+    background: var(--color-white);
+    
+    border: var(--border-thickness) solid var(--color-black);
+    border-radius: var(--border-radius);
+
+    width: 2vw;
+    height: 2vw;
+
+    padding: 0;
+    margin: 0;
+
+    transition: background-color 0.1s;
+
+    cursor: var(--cursor-pointer);
+}
+
+input[type="checkbox"]:active {
+    cursor: var(--cursor-click);
+}
+
+input[type="checkbox"]:checked {
+    background-color: var(--color-orange);
+}
+
+/* panels */
+.panel {
+    background: linear-gradient(to top, var(--color-grey2) 0.3vw, var(--color-white) 0.3vw, var(--color-white));
+    border: var(--border-thickness) solid var(--color-black);
+    border-radius: var(--border-radius);
+    padding: 1.25vw;
+}
+
+.scroll {
+    overflow-y: scroll !important;
+    -webkit-overflow-scrolling: touch;
+    overflow-x: hidden;
+    padding-right: 1.25vw;
+}
+
+.grow {
+    flex-grow: 1;
+}
+
+.flex-col {
+    display: flex;
+    flex-direction: column;
+
+    gap: 0.675vw;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+
+    gap: 0.675vw;
+}
+
+.flex-center {
+    align-items: center;
+    justify-content: center;
+}
+
+/* game */
+#game {
+    position: absolute;
+
+    left: 0;
+    top: 0;
+
+    /* moving background */
+    background-image: url("../img/background/background1.svg");
+    background-size: 15vw 15vw;
+    background-position: 0 0;
+    
+    animation: moving-checkerboard;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-duration: 8s;
+
+    z-index: 1;
+
+    width: 100vw;
+    height: 100vh;
+    height: 100dvh;
+
+    max-width: 100vw;
+    max-height: 100vh;
+}
+
+@keyframes moving-checkerboard {
+    0% {
+        background-position: 0 0;
+    }
+
+    100% {
+        background-position: 15vw 15vw;
+    }
+}
+
+/* loader */
+#loader {
+    position: absolute;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-image: url("../img/background/background1.svg");
+    background-color: var(--color-orange);
+    background-size: 15vw 15vw;
+
+    animation: moving-checkerboard;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-duration: 8s;
+
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    z-index: 999;
+}
+
+#loader img {
+    width: 30vw;
+}
+
+#loader-bar {
+    position: absolute;
+
+    bottom: 1.25vw;
+    left: 1.25vw;
+    right: 1.25vw;
+
+    border: var(--border-thickness) solid var(--color-black);
+    border-radius: 1.25vw;
+
+    background-color: var(--color-grey2);
+    height: 2.5vw;
+}
+
+#loader-progress {
+    position: absolute;
+
+    top: calc(-1 * var(--border-thickness));
+    bottom: calc(-1 * var(--border-thickness));
+    left: calc(-1 * var(--border-thickness));
+
+    border: var(--border-thickness) solid var(--color-black);
+    border-radius: 1.25vw;
+    
+    background-color: var(--color-white);
+    
+    
+    animation: fake-loading;
+    animation-duration: 8s;
+    animation-timing-function: ease-out;
+
+    width: calc(90% + 2 * var(--border-thickness));
+}
+
+@keyframes fake-loading {
+    0% {
+        width: 10%;
+    }
+
+    100% {
+        width: calc(90% + 2 * var(--border-thickness));
+    }
+}
+
+/* Notifications */
+#notifications {
+    position: absolute;
+
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+
+    pointer-events: none;
+    touch-action: none;
+}
+
+#notification {
+    position: absolute;
+
+    left: 14vw;
+    bottom: -10vw;
+    right: 30.2vw;
+
+    transition: bottom 0.5s, right 0.7s, opacity 0.5s;
+
+    pointer-events: all;
+    touch-action: auto;
+
+    height: auto;
+    min-height: 7vw;
+
+    opacity: 0;
+    z-index: 4;
+}
+
+#notification.wide {
+    right: 14vw;
+}
+
+#notification.show {
+    bottom: 1.25vw;
+    opacity: 1;
+}
+
+#notification p {
+    text-align: center;
+    font-size: 1.75vw;
+    word-spacing: 0.5vw;
+    line-height: 2vw;
+}
+
+/* outer stroke trick */
+.stroke {
+    position: relative;
+    -webkit-text-stroke: var(--text-stroke) var(--color-black);
+}
+
+.stroke::after {
+    content: attr(data-content);
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    
+    -webkit-text-stroke: 0;
+
+    /* shadows fill inside gaps mostly... */
+    text-shadow: 0px 0px calc(var(--text-stroke) - 2px) var(--color-black);
+}
+
+/* scrollbars */
+::-webkit-scrollbar {
+    width: 2.5vw;
+}
+  
+::-webkit-scrollbar-track {
+    background: var(--color-white);
+    border: var(--border-thickness) solid var(--color-black);
+    border-radius: 1.25vw;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--color-white);
+    border: var(--border-thickness) solid var(--color-black);
+    border-radius: 1.25vw;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color-grey1);
+}
+
+::-webkit-scrollbar-thumb:active {
+    background: var(--color-grey2);
+}
+
+.cursor-drag {
+    cursor: var(--cursor-drag);
+}
+
+.cursor-dragging {
+    cursor: var(--cursor-dragging);
+}
+
+#duck {
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
